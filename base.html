@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arknights - Base</title>
+    <link rel="stylesheet" href="base.style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&family=Caveat:wght@500&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="base-container">
+        <header class="base-header">
+            <a href="index.html" class="back-button">← BACK</a>
+            <button class="edit-position-btn" id="edit-position-btn">EDIT POSITIONS</button>
+            <button class="save-positions-btn" id="save-positions-btn" style="display: none;">SAVE POSITIONS</button>
+        </header>
+        
+        <main class="base-layout">
+            <div class="facility-room control-center">
+                <span>CONTROL CENTER</span>
+            </div>
+
+            <div class="floor" id="floor-1">
+                <!-- Ruangan baru akan ditambahkan di sini -->
+            </div>
+
+            <button class="add-room-button" id="add-room-btn">+</button>
+        </main>
+    </div>
+
+    <!-- Tampilan Detail Ruangan (tersembunyi) -->
+    <div class="room-detail-view" id="room-detail-view">
+        <div class="room-detail-header">
+            <button class="detail-back-button" id="detail-back-btn">← EXIT</button>
+            <h2 id="detail-room-name">ROOM NAME</h2>
+            <button class="change-theme-btn" id="change-theme-btn" title="Change Room Theme">🎨</button>
+            <button class="add-item-btn" id="add-item-btn" title="Add Item">🖼️</button>
+            <button class="save-decor-btn" id="save-decor-btn">SAVE ITEMS</button>
+            <button class="reset-cc-btn" id="reset-cc-btn" style="display: none;">RESET</button>
+            <!-- Kontainer untuk avatar & tombol tambah karakter akan ditambahkan oleh JS di sini -->
+        </div>
+        <div class="room-detail-content" id="detail-room-content">
+            <!-- Konten interior, chibi, dll. akan masuk di sini -->
+        </div>
+    </div>
+
+    <!-- Modal untuk Detail Proyek -->
+    <div class="project-detail-modal-overlay" id="project-detail-modal-overlay">
+        <div class="project-detail-modal">
+            <div class="project-detail-modal-header">
+                <h2 id="project-detail-title">PROJECT TITLE</h2>
+                <span class="modal-close" id="project-detail-close-btn">&times;</span>
+            </div>
+            <div class="project-detail-content-wrapper">
+                <div class="project-slideshow">
+                    <img src="" alt="Project Image" id="project-slideshow-img">
+                    <button class="slideshow-nav-btn left" id="slideshow-prev-btn">‹</button>
+                    <button class="slideshow-nav-btn right" id="slideshow-next-btn">›</button>
+                    <div class="slideshow-dots" id="slideshow-dots">
+                        <!-- Dots will be added here by JS -->
+                    </div>
+                </div>
+                <div class="project-description">
+                    <p id="project-detail-description"></p>
+                    <!-- Tambahan detail proyek lainnya bisa ditambahkan di sini -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Overlay untuk menampilkan Note yang di-zoom -->
+    <div class="zoomed-note-overlay" id="zoomed-note-overlay">
+        <div class="zoomed-note-container">
+            <div class="note-display-area">
+                <div class="note-paper-display" id="zoomed-note-text-content"></div>
+            </div>
+            <div class="note-actions-sidebar">
+                <button class="build-btn" id="zoomed-note-edit-btn">EDIT TEXT</button>
+                <button class="build-btn delete-btn" id="zoomed-note-delete-btn">DELETE ITEM</button>
+                <button class="zoomed-note-close" id="zoomed-note-close">&times;</button>
+            </div>
+        </div>
+    </div>
+    <script src="base.script.js"></script>
+
+    <!-- Modal untuk Menambah Ruangan Baru -->
+    <div class="modal-overlay hidden" id="add-room-modal-overlay">
+        <div class="modal">
+            <div class="modal-header">
+                <h2>BUILD FACILITY</h2>
+                <span class="modal-close" id="modal-close-btn">&times;</span>
+            </div>
+            <div class="modal-body">
+                <div class="room-choice-container" id="room-choice-container"></div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
